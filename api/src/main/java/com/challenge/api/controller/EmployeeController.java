@@ -38,11 +38,11 @@ public class EmployeeController {
 
     /**
      * @implNote Need not be concerned with an actual persistence layer.
-     * //     * @param requestBody hint!
+     * @param requestBody hint!
      * @return Newly created Employee
      */
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeService.createEmployee(employee);
+    public Employee createEmployee(@RequestBody Employee requestBody) {
+        return employeeService.createEmployee(requestBody);
     }
 }
