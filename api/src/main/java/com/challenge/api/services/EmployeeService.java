@@ -13,6 +13,12 @@ import org.springframework.web.server.ResponseStatusException;
 public class EmployeeService {
     private List<Employee> employeeList = new ArrayList<>();
 
+    public EmployeeService(){
+        // Constructor to initialize a mock employeeList
+        // in actual implementation could have load employees from the database or
+        // just execute queries to database for each function and not have it stored in memory
+        this.employeeList = createMockList();
+    }
     public List<Employee> createMockList() {
         // use a stream to add three mock employees to the list
         return Stream.of(
@@ -63,6 +69,7 @@ public class EmployeeService {
 
     public List<Employee> getAllEmployees() {
         // Return the current list of all employees
+        // With a database this could query the databse to get the list so we dont need to hold it in memory
         return employeeList;
     }
 
@@ -75,7 +82,6 @@ public class EmployeeService {
     }
 
     public Employee createEmployee(Employee employee) {
-
         // Generate a random UUID for the new employee
         employee.setUuid(UUID.randomUUID());
         // Add the new employee to the list

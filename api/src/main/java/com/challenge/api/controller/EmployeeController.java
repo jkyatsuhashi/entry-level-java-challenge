@@ -15,7 +15,6 @@ public class EmployeeController {
 
     private EmployeeService employeeService;
     // Initialize a mock employee list
-    private List<Employee> EmployeeList = employeeService.createMockList();
     /**
      * @implNote Need not be concerned with an actual persistence layer. Generate mock Employee models as necessary.
      * @return One or more Employees.
