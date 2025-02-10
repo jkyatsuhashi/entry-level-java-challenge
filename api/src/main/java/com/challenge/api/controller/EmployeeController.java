@@ -21,7 +21,7 @@ public class EmployeeController {
      */
     @GetMapping
     public List<Employee> getAllEmployees() {
-        return employeeService.getAllEmployees(); // Return the entire list of employees
+        return employeeService.getAllEmployees();
     }
 
     /**
@@ -31,7 +31,6 @@ public class EmployeeController {
      */
     @GetMapping("/{uuid}")
     public Employee getEmployeeByUuid(UUID uuid) {
-        // Iterate over all the employees, get the uuid, and find the match
         return employeeService.getEmployeeByUuid(uuid);
     }
 

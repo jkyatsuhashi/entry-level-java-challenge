@@ -16,6 +16,29 @@ public class EmployeeImplementation implements Employee {
     private Instant contractHireDate;
     private Instant contractTerminationDate;
 
+    public EmployeeImplementation(
+            UUID uuid,
+            String firstName,
+            String lastName,
+            String fullName,
+            Integer salary,
+            Integer age,
+            String jobTitle,
+            String email,
+            Instant contractHireDate,
+            Instant contractTerminationDate) {
+        this.uuid = uuid;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = fullName;
+        this.salary = salary;
+        this.age = age;
+        this.jobTitle = jobTitle;
+        this.email = email;
+        this.contractHireDate = contractHireDate;
+        this.contractTerminationDate = contractTerminationDate;
+    }
+
     public UUID getUuid() {
         return uuid;
     }
