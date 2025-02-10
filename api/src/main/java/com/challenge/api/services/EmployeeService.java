@@ -13,6 +13,7 @@ public class EmployeeService {
 
     public EmployeeService() {
         // Initialize the mock employeeList directly in the constructor
+        // Normally this could be a query to database if you want data to be stored in memory
         this.employeeList = List.of(
                 new EmployeeImplementation(
                         UUID.randomUUID(),
@@ -76,8 +77,8 @@ public class EmployeeService {
                 employee.getEmail(),
                 employee.getContractHireDate(),
                 employee.getContractTerminationDate());
-        // Add the new employee to the list
+        // Add the new employee to the list (would be sending to database here)
         employeeList.add(newEmployee);
-        return employee;
+        return newEmployee;
     }
 }

@@ -39,6 +39,7 @@ public class EmployeeImplementation implements Employee {
         this.contractTerminationDate = contractTerminationDate;
     }
 
+    @Override
     public UUID getUuid() {
         return uuid;
     }
