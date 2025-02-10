@@ -9,12 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 public class EmployeeService {
-    private List<Employee> employeeList = new ArrayList<>();
+    private List<Employee> employeeList;
 
     public EmployeeService() {
         // Initialize the mock employeeList directly in the constructor
         // Normally this could be a query to database if you want data to be stored in memory
-        this.employeeList = List.of(
+        this.employeeList = new ArrayList<>(List.of(
                 new EmployeeImplementation(
                         UUID.randomUUID(),
                         "John",
@@ -47,7 +47,7 @@ public class EmployeeService {
                         "Project Manager",
                         "alice.brown@example.com",
                         Instant.parse("2020-03-20T00:00:00Z"),
-                        Instant.parse("2025-03-20T00:00:00Z")));
+                        Instant.parse("2025-03-20T00:00:00Z"))));
     }
 
     public List<Employee> getAllEmployees() {
